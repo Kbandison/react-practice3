@@ -41,7 +41,7 @@ class Table extends React.Component {
   render() {
     return (
       <table>
-        <Header header="Table Practice" />
+        <Header />
         <Row
           characterData={this.state.characters}
           removeCharacter={this.removeCharacter}
