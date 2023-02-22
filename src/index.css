@@ -12,4 +12,8 @@ code {
     monospace;
 }
 
+td {
+  margin-right: 10px;
+}
+
 /* export default index; */

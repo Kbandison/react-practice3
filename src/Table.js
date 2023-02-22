@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Row from "./Row";
+import Form from "./Form";
 
 class Table extends React.Component {
   constructor(props) {
@@ -38,15 +39,31 @@ class Table extends React.Component {
     });
   };
 
+  // addCharacter = (name, job) => {
+  //   this.characters.push({ name: name });
+
+  //   this.setState({
+  //     characters: this.characters,
+  //   });
+  // };
+
+  addCharacter = (character) => {
+    this.setState({ characters: [...this.state.characters, character] });
+  };
+
   render() {
     return (
-      <table>
-        <Header />
-        <Row
-          characterData={this.state.characters}
-          removeCharacter={this.removeCharacter}
-        />
-      </table>
+      <>
+        <table>
+          <Header />
+          <Row
+            characterData={this.state.characters}
+            removeCharacter={this.removeCharacter}
+          />
+        </table>
+        <br />
+        <Form addCharacter={this.addCharacter} />
+      </>
     );
   }
 }
